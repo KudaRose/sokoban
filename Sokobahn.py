@@ -196,12 +196,11 @@ def movimiento_jugador(event, level_obj):
           win_flag = False
           break
     if win_flag:
-      global current_level
-      current_level += 1
-      global total_steps
-      total_steps += level_obj.pasos.get()
+      global current_level, total_steps
       global current_level_obj
-      current_level_obj.destroy_level()
+      current_level += 1
+      total_steps += level_obj.pasos.get()
+      level_obj.destroy_level()
 
       if (current_level <= 3):
         current_level_obj = Level(current_level)
