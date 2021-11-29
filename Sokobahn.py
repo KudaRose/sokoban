@@ -1,8 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 from tkinter import PhotoImage
-
-import time
+from pathlib import Path
 
 """
 0-Suelo
@@ -65,11 +64,12 @@ def crea_matriz_img(fi, co):
 
 def crea_vector_img():
     v_i = []
-    str_nom = "img_soko/soko-"
-    str_ext = ".png"
+    img_path = Path("img_soko")
 
     for i in range(6):
-        v_i.append(PhotoImage(file=str_nom + str(i) + str_ext))
+        image = "soko-" + str(i) + ".png"
+        fullpath = img_path / image
+        v_i.append(PhotoImage(file=fullpath))
 
     return v_i
 
